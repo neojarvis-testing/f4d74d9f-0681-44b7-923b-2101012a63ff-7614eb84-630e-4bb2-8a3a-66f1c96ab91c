@@ -52,7 +52,7 @@ public class WebDriverHelper {
                     .until(ExpectedConditions.visibilityOfElementLocated(locator));
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to locate element", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to locate element", test, e.getMessage());
         }
     }
 
@@ -68,7 +68,7 @@ public class WebDriverHelper {
                     .click();
         }catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to locate element and hover", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to locate element and hover", test, e.getMessage());
         }
     }
 
@@ -85,7 +85,7 @@ public class WebDriverHelper {
                     .sendKeys(data);
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to write on element", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to write on element", test, e.getMessage());
         }
     }
 
@@ -102,7 +102,7 @@ public class WebDriverHelper {
             return driver.findElement(locator).getText();
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to retrieve text from element", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to retrieve text from element", test, e.getMessage());
             return " ";
         }
     }
@@ -119,7 +119,7 @@ public class WebDriverHelper {
                     .sendKeys(Keys.ENTER);
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to perform ENTER action on element", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to perform ENTER action on element", test, e.getMessage());
         }
     }
 
@@ -137,7 +137,7 @@ public class WebDriverHelper {
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
             //message+=e.getMessage();
-            Reporter.addScreenshotToReport("Unable to locate element and hover", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to locate element and hover", test, e.getMessage());
         }
     }
 
@@ -156,7 +156,7 @@ public class WebDriverHelper {
             }
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to switch to different a window", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to switch to different a window", test, e.getMessage());
         }
     }
 
@@ -172,7 +172,7 @@ public class WebDriverHelper {
             return elements;
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to find the elements", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to find the elements", test, e.getMessage());
         }
         return null;
     }
@@ -202,7 +202,7 @@ public class WebDriverHelper {
             }
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to scroll", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to scroll", test, e.getMessage());
         }
     }
 
@@ -217,7 +217,7 @@ public class WebDriverHelper {
             js.executeScript("arguments[0].scrollIntoView();", driver.findElement(locator));
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to scroll to a specific element", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to scroll to a specific element", test, e.getMessage());
         }
     }
 
@@ -230,7 +230,7 @@ public class WebDriverHelper {
             js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
         } catch (Exception e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport("Unable to scroll to End", test, e.getMessage());
+            Reporter.addScreenshotToReportfail("Unable to scroll to End", test, e.getMessage());
         }
     }
 
@@ -254,7 +254,7 @@ public class WebDriverHelper {
             LoggerHandler.info(description);
         } catch (AssertionError e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport(description, test, e.getMessage());
+            Reporter.addScreenshotToReportfail(description, test, e.getMessage());
         }
     }
 
@@ -276,7 +276,7 @@ public class WebDriverHelper {
             LoggerHandler.info(description);
         } catch (AssertionError e) {
             LoggerHandler.error(e.getMessage());
-            Reporter.addScreenshotToReport(description, test, e.getMessage());
+            Reporter.addScreenshotToReportfail(description, test, e.getMessage());
         }
     }
 
