@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class NecklaceBuyAndMyCartVerifiedLocator_Nakul {
+public class NecklaceBuyAndMyCartVerifiedLocator {
     public static By logo = By.cssSelector("img[title='Online Shopping in India']");
     public static By search = By.id("q");
     public static By hover = By.xpath("(//div[@class='quick_look_wrap'])[1]");

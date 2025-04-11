@@ -10,20 +10,20 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import pages.BuyPendentsActionGautam;
-import pages.BuyRingsActionGautam;
+import pages.BuyPendentsAction;
+import pages.BuyRingsAction;
 import utils.Base;
 import utils.LoggerHandler;
 import utils.Reporter;
 import utils.Screenshot;
 
-public class TestRunGautam extends Base{
+public class TestRunner_Gautam extends Base{
     ExtentReports reports;
     ExtentTest test;
 
     @BeforeClass
     public void reportConfig(){
-        reports=Reporter.initializeExtentReport("Reliance Jewles");
+        reports=Reporter.initializeExtentReport("Reliance_Report");
     }
 
     @BeforeMethod
@@ -33,16 +33,20 @@ public class TestRunGautam extends Base{
     
     
     @Test(priority = 1, enabled=true)
-    public void BuyRing(){
-        test=reports.createTest("Buy Ring Test");
-        BuyRingsActionGautam action=new BuyRingsActionGautam(test);
+    public void Buy_Ring_Test(){
+        //test=reports.createTest("Buy Ring Test");
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
+        LoggerHandler.info(new Throwable().getStackTrace()[0].getMethodName());
+        BuyRingsAction action=new BuyRingsAction(test);
         action.callAllMethod();
     }
 
     @Test(priority = 2)
-    public void BuyPendent(){
-        test=reports.createTest("Buy Pendent Test");
-        BuyPendentsActionGautam action=new BuyPendentsActionGautam(test);
+    public void Buy_Pendent_Test(){
+        //test=reports.createTest("Buy Pendent Test");
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
+        LoggerHandler.info(new Throwable().getStackTrace()[0].getMethodName());
+        BuyPendentsAction action=new BuyPendentsAction(test);
         action.callAllAction();
         
     }
