@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.io.FileHandler;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.google.common.io.Files;
  
 /**
 * Creator: Akash Deep
@@ -23,29 +24,34 @@ public class Screenshot {
     public static TakesScreenshot ts;
  
     /**
-     * Description: Captures a screenshot of the entire web page and saves it with a timestamped filename.
+     * Description: Captures a screenshot and saves it with the specified filename.
      *
-     * @param filename - The base name for the screenshot file
-     * @return The file path of the saved screenshot
+     * @param filename The name of the screenshot file.
+     * @return The path to the saved screenshot file.
      */
     public static String takePageScreenShot(String filename) {
         String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-        String name = "/" + filename + timestamp + ".png";
-        try {
-            TakesScreenshot ts = (TakesScreenshot) Base.driver;
-            File file = ts.getScreenshotAs(OutputType.FILE);
-            File target = new File(System.getProperty("user.dir") + "/screenshots");
-            deleteAllFilesInsideDirectory(target.toString());
-            target.delete();
-            if (!target.exists()) {
-                target.mkdirs();
-            }
-            FileHandler.copy(file, new File(target.toString() + name));
-            return target.toString() + name;
-        } catch (Exception e) {
-            LoggerHandler.error(e.getMessage());
+        String name = filename + timestamp + ".png";
+ 
+        String destPath = "./" + name;
+ 
+         ts = (TakesScreenshot) Base.driver;
+        File file = ts.getScreenshotAs(OutputType.FILE);
+ 
+        // Create the screenshots directory if it doesn't exist
+        File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshots"); //Base.prop.getProperty("screenshot")
+ 
+        if (!screenshotsDir.exists()) {
+            screenshotsDir.mkdirs();
         }
-        return null;
+ 
+        File target = new File(screenshotsDir, name);
+        try {
+            Files.copy(file, target);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return destPath;
     }
  
     /**
@@ -61,7 +67,7 @@ public class Screenshot {
         try {
             WebElement elementParam = Base.driver.findElement(elementLocator);
             File file = elementParam.getScreenshotAs(OutputType.FILE);
-            File target = new File(System.getProperty("user.dir") + "/screenshots");
+            File target = new File(System.getProperty("user.dir") +"/screenshots");
             if (!target.exists()) {
                 target.mkdirs();
             }
@@ -116,7 +122,7 @@ public class Screenshot {
             TakesScreenshot ts = (TakesScreenshot) Base.driver;
             File file = ts.getScreenshotAs(OutputType.FILE);
  
-            File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshorts");
+            File screenshotsDir = new File(System.getProperty("user.dir") + "/screenshots"); //"/screenshorts"
  
             if (!screenshotsDir.exists()) {
                 screenshotsDir.mkdirs();

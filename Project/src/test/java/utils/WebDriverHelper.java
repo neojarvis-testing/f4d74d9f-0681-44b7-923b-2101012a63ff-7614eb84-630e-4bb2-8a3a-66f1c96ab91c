@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 /**
  * Creator: Nakul J Gowda
@@ -62,7 +63,6 @@ public class WebDriverHelper {
      * //
      */
     public void clickElement(By locator) {
-        //String message="";
         try {
             driver.findElement(locator)
                     .click();
@@ -252,6 +252,7 @@ public class WebDriverHelper {
         try {
             Assert.assertEquals(actual, expected);
             LoggerHandler.info(description);
+            test.log(Status.PASS, description);
         } catch (AssertionError e) {
             LoggerHandler.error(e.getMessage());
             Reporter.addScreenshotToReportfail(description, test, e.getMessage());
@@ -274,6 +275,7 @@ public class WebDriverHelper {
         try {
             Assert.assertTrue(condition);
             LoggerHandler.info(description);
+            test.log(Status.PASS, description);
         } catch (AssertionError e) {
             LoggerHandler.error(e.getMessage());
             Reporter.addScreenshotToReportfail(description, test, e.getMessage());

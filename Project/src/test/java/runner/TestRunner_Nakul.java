@@ -11,8 +11,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import pages.NecklaceBuyAndMyCartVerifiedAction_Nakul;
-import pages.FooterPoliciesAction_Nakul;
+import pages.NecklaceBuyAndMyCartVerifiedAction;
+import pages.FooterPoliciesAction;
 import utils.Base;
 import utils.LoggerHandler;
 import utils.Reporter;
@@ -33,10 +33,12 @@ public class TestRunner_Nakul extends Base{
     }
 
     @Test(priority = 1, enabled = true)
-    public void Testcase1() {
+    public void Necklace_Buy_And_MyCartVerified() {
         try {
-            test = reports.createTest("Test Case two");
-            NecklaceBuyAndMyCartVerifiedAction_Nakul action = new NecklaceBuyAndMyCartVerifiedAction_Nakul(test);
+            //test = reports.createTest("Test Case two");
+            test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
+            LoggerHandler.info(new Throwable().getStackTrace()[0].getMethodName());
+            NecklaceBuyAndMyCartVerifiedAction action = new NecklaceBuyAndMyCartVerifiedAction(test);
             action.executeAll();
 
         } catch (Exception e) {
@@ -46,10 +48,12 @@ public class TestRunner_Nakul extends Base{
     }
 
     @Test(priority = 2, enabled = true)
-    public void Testcase2() {
+    public void Footer_Policies_Testing() {
         try {
-            test = reports.createTest("Test Case Nine");
-            FooterPoliciesAction_Nakul action = new FooterPoliciesAction_Nakul(test);
+            //test = reports.createTest("Test Case Nine");
+            test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
+            LoggerHandler.info(new Throwable().getStackTrace()[0].getMethodName());
+            FooterPoliciesAction action = new FooterPoliciesAction(test);
             action.policies();
 
         } catch (Exception e) {

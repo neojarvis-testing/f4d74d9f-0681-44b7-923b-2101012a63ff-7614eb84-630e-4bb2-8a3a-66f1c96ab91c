@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class diamondLocatorsAtish {
+public class DiamondLocators {
     public static By logo = By.cssSelector("img[src='//image.reliancejewels.com/Jewels/cms_hydrant/widgets/HS18Logo/HorizontalBannerImage_1593441799728.png']");
     public static By EarringHover = By.cssSelector("a[href='https://www.reliancejewels.com/category:131/'][class='dropdown-toggle']");
     public static By DiamondClick = By.cssSelector("a[href='https://www.reliancejewels.com/category:133/']");
