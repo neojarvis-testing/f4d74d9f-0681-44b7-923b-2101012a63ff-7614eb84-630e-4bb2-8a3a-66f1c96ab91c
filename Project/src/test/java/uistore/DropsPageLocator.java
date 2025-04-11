@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class RespectivePageLocatorAkash {
+public class DropsPageLocator {
 
     public static By categories = By.cssSelector("div[id='myDIV']");
     public static By gold = By.cssSelector("a[href='/gold/category:132/filter_Earring_Type:%28%22Drops%22%29/']");

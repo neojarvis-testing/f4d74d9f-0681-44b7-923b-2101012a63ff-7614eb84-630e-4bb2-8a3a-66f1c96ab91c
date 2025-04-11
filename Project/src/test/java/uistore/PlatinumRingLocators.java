@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class RelianceJewelsLocators_Sahla {
+public class PlatinumRingLocators {
 
         public static By hoverRings = By.xpath("//a[@href='https://www.reliancejewels.com/category:136/']");
 
@@ -12,7 +12,7 @@ public class RelianceJewelsLocators_Sahla {
         public static By clickCategory = By.cssSelector("a div[id='filter_tree']");
 
         public static By clickPlatinum = By
-                        .cssSelector("a[href='/platinum/category:140/filter_Occasion:%28%22Casual+Wear%22%29/']");
+                        .xpath("(//a[contains(text(),'Platinum')])[4]");
 
         public static By clickMorefilters = By.cssSelector("button[class='filtersbutton']");
 

@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class HomepageFooterLocators_Abarna {
+public class HomepageFooterLocators {
     
     public static By Aboutus = By.cssSelector("a[href='https://m.reliancejewels.com/static/about_us2024.mobi']");
     // public static By Aboutus = By.xpath("//a[@href='https://m.reliancejewels.com/static/about_us2024.mobi']");
