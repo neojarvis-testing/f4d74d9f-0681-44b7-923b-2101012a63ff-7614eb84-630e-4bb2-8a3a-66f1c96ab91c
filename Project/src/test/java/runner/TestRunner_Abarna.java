@@ -9,9 +9,10 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import pages.HomepageVivaham_Abarna;
-import pages.HomepageFooter_Abarna;
+import pages.HomepageVivahamAction;
+import pages.HomepageFooterAction;
 import utils.Base;
+import utils.LoggerHandler;
 import utils.Reporter;
 
 public class TestRunner_Abarna extends Base {
@@ -20,7 +21,7 @@ public class TestRunner_Abarna extends Base {
 
     @BeforeClass
     public static void reportConfig() {
-        reports = Reporter.initializeExtentReport("Reliance jewels report");
+        reports = Reporter.initializeExtentReport("Reliance_Report");
     }
 
     @BeforeMethod
@@ -29,16 +30,20 @@ public class TestRunner_Abarna extends Base {
     }
 
     @Test(priority = 1, enabled = true)
-    public void testing() {
-        test = reports.createTest("vivaham");
-        HomepageVivaham_Abarna vivahActions = new HomepageVivaham_Abarna(test);
+    public void Vivaham_Testing() {
+        //test = reports.createTest("vivaham");
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
+        LoggerHandler.info(new Throwable().getStackTrace()[0].getMethodName());
+        HomepageVivahamAction vivahActions = new HomepageVivahamAction(test);
         vivahActions.vivahamSection(test);
     }
 
     @Test(priority = 2, enabled = true)
-    public void footerPart() {
-        test = reports.createTest("Brand and Customer");
-        HomepageFooter_Abarna footerActions = new HomepageFooter_Abarna(test);
+    public void Brand_And_Customer_footerPart() {
+        //test = reports.createTest("Brand and Customer");
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
+        LoggerHandler.info(new Throwable().getStackTrace()[0].getMethodName());
+        HomepageFooterAction footerActions = new HomepageFooterAction(test);
         footerActions.BrandStoryCustomerDelight(test);
 
     }

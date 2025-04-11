@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class HomepageVivahamLocators_Abarna {
+public class HomepageVivahamLocators {
     
     public static By Whatstrending = By.xpath("(//a[@data-hover='dropdown'])[2]");
     public static By Vivaham = By.cssSelector("a[href='https://m.reliancejewels.com/static/VIVAHAM.mobi']");
