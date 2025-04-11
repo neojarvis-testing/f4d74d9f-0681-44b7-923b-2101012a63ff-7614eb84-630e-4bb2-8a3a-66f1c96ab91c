@@ -53,7 +53,7 @@ public class Reporter extends Base {
         extentReport = new ExtentReports();
  
         // Load properties from browser.properties file
-        String filepath = System.getProperty("user.dir") + "/config/browser.properties";
+        String filepath = System.getProperty("user.dir") + "/config/config.properties";
         try (FileInputStream file = new FileInputStream(filepath)) {
             prop = new Properties();
             prop.load(file);
@@ -114,7 +114,7 @@ public class Reporter extends Base {
         File file = ts.getScreenshotAs(OutputType.FILE);
  
         // Create the screenshots directory if it doesn't exist
-        File screenshotsDir = new File(System.getProperty("user.dir") + "/reports");
+        File screenshotsDir = new File(System.getProperty("user.dir") + Base.prop.getProperty("report")); // "/reports"
  
         if (!screenshotsDir.exists()) {
             screenshotsDir.mkdirs();

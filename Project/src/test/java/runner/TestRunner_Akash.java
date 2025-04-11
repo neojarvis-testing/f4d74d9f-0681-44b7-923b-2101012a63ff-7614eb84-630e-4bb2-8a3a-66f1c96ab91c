@@ -9,11 +9,13 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import pages.TestFiveActionAkash;
+import pages.ChainAction;
+import pages.HomepageEarringsAction;
 import utils.Base;
+import utils.LoggerHandler;
 import utils.Reporter;
 
-public class TestRunnerAkash extends Base {
+public class TestRunner_Akash extends Base {
 
     public ExtentReports reports;
     public ExtentTest test;
@@ -31,16 +33,12 @@ public class TestRunnerAkash extends Base {
         openBrowser();
     }
     @Test
-    public void testcasefive()
+    public void Earrings_Purchase()
     {
-        test=reports.createTest("Reliance jewels Test");
-        TestFiveActionAkash action = new TestFiveActionAkash(test);
-        action.clicksOnEarrings();
-        action.clicksOnCategories();
-        action.clicksOnMoreFilters();
-        action.clicksOnProduct();
-        action.buyNowProduct();
-        
+        test = reports.createTest(new Throwable().getStackTrace()[0].getMethodName());
+        LoggerHandler.info(new Throwable().getStackTrace()[0].getMethodName());
+        HomepageEarringsAction action = new HomepageEarringsAction(test);
+        action.allFunctionality();
 
     }
 

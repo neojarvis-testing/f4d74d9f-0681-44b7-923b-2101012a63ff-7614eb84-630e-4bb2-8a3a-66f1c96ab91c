@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class RingPageLocatorsGautam {
+public class RingPageLocators {
     public static By Gender= By.cssSelector("div[class='head clearfix'][id='myDIV01']");
     public static By Mens=By.cssSelector("a[href='/rings/search:Rings/filter_Gender:%28%22Men%22%29/']");
     public static By Metal=By.xpath("//div[text()='Metal']");

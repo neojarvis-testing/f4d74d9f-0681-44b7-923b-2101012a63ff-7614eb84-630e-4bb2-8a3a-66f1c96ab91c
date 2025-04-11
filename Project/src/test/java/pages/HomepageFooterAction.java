@@ -1,17 +1,17 @@
 package pages;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import uistore.HomepageFooterLocators_Abarna;
+import uistore.HomepageFooterLocators;
 import utils.Base;
 import utils.LoggerHandler;
 import utils.WebDriverHelper;
 
-public class HomepageFooter_Abarna {
+public class HomepageFooterAction {
 
     public ExtentTest test;
     WebDriverHelper helper;  
 
-    public HomepageFooter_Abarna(ExtentTest test){    
+    public HomepageFooterAction(ExtentTest test){    
         this.test=test;
         helper = new WebDriverHelper(Base.driver,test);
     }
@@ -20,7 +20,7 @@ public class HomepageFooter_Abarna {
 
     public void AboutUs(){
         try {
-            helper.clickElement(HomepageFooterLocators_Abarna.Aboutus);
+            helper.clickElement(HomepageFooterLocators.Aboutus);
             Base.driver.navigate().back();  
             test.log(Status.INFO, "Clicked Aboutus and navigated");   
             LoggerHandler.info("Clicked Aboutus and navigated");   
@@ -31,7 +31,7 @@ public class HomepageFooter_Abarna {
 
     public void WhyReliance(){
         try {
-            helper.clickElement(HomepageFooterLocators_Abarna.WhyReliance);
+            helper.clickElement(HomepageFooterLocators.WhyReliance);
             Base.driver.navigate().back(); 
             test.log(Status.INFO, "Clicked WhyReliance and navigated"); 
             LoggerHandler.info("Clicked WhyReliance and navigated");          
@@ -42,7 +42,7 @@ public class HomepageFooter_Abarna {
     
     public void Certifications(){
         try {  
-            helper.clickElement(HomepageFooterLocators_Abarna.Certification);
+            helper.clickElement(HomepageFooterLocators.Certification);
             Base.driver.navigate().back();
             test.log(Status.INFO, "Clicked Certifications and navigated"); 
             LoggerHandler.info("Clicked Certifications and navigated");          
@@ -53,7 +53,7 @@ public class HomepageFooter_Abarna {
     
     public void OurShowrooms(){
         try {
-            helper.clickElement(HomepageFooterLocators_Abarna.OurShowroom);
+            helper.clickElement(HomepageFooterLocators.OurShowroom);
             Base.driver.navigate().back();  
             test.log(Status.INFO, "Clicked OurShowroom and navigated");         
             LoggerHandler.info("Clicked OurShowroom and navigated");          
@@ -64,7 +64,7 @@ public class HomepageFooter_Abarna {
     
     public void Media(){
         try {   
-            helper.clickElement(HomepageFooterLocators_Abarna.Media);
+            helper.clickElement(HomepageFooterLocators.Media);
             Base.driver.navigate().back();
             test.log(Status.INFO, "Clicked Media and navigated"); 
             LoggerHandler.info("Clicked Media and navigated");          
@@ -75,7 +75,7 @@ public class HomepageFooter_Abarna {
     
     public void Blog(){
         try {
-            helper.clickElement(HomepageFooterLocators_Abarna.Blog);
+            helper.clickElement(HomepageFooterLocators.Blog);
             Base.driver.navigate().back();   
             test.log(Status.INFO, "Clicked Blog and navigated");         
             LoggerHandler.info("Clicked Blog and navigated");          
@@ -86,7 +86,7 @@ public class HomepageFooter_Abarna {
     
     public void FAQs(){
         try {
-            helper.clickElement(HomepageFooterLocators_Abarna.FAQs);
+            helper.clickElement(HomepageFooterLocators.FAQs);
             Base.driver.navigate().back();   
             test.log(Status.INFO, "Clicked FAQs and navigated");       
             LoggerHandler.info("Clicked FAQs and navigated");          
@@ -97,7 +97,7 @@ public class HomepageFooter_Abarna {
     
     public void TrackOrder(){
         try {
-            helper.clickElement(HomepageFooterLocators_Abarna.Trackorder);
+            helper.clickElement(HomepageFooterLocators.Trackorder);
             Base.driver.navigate().back();  
             test.log(Status.INFO, "Clicked Aboutus and navigated");          
             LoggerHandler.info("Clicked Aboutus and navigated");          
@@ -108,7 +108,7 @@ public class HomepageFooter_Abarna {
     
     public void Contactus(){
         try {
-            helper.clickElement(HomepageFooterLocators_Abarna.Contactus);
+            helper.clickElement(HomepageFooterLocators.Contactus);
             Base.driver.navigate().back();     
             test.log(Status.INFO, "Clicked Contact us and navigated");        
             LoggerHandler.info("Clicked Contact us and navigated");          
